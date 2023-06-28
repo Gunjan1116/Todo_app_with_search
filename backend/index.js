@@ -1,5 +1,7 @@
 const express=require("express");
+const redis=require("redis");
 const { connection } = require("./config/db");
+const { userRoute } = require("./routes/userRoute");
 require("dotenv").config();
 
 
@@ -7,9 +9,11 @@ const app=express();
 
 app.use(express.json());
 
-app.get("/",(req,res)=>{
-    res.send("Welcome to Home page of todo API")
+app.get("/",async(req,res)=>{
+    res.json({"msg":"Welcome to Home page of todo API"})
 })
+
+app.use("/user",userRoute)
 
 app.listen(process.env.port,async()=>{
     try {
