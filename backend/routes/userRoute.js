@@ -17,6 +17,6 @@ module.exports={
 
 // {
 //     "name":"gunjan kumar",
-//     "email":"kumargunjan1116@gmail.com",
+//     "email":"",
 //     "password":"",
 //   }

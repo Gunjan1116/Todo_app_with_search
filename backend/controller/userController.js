@@ -4,7 +4,7 @@ require("dotenv").config();
 const {Usermodel} =require("../models/userModel");
 
 const register=async(req,res)=>{
-    const {name,email,password,role,specialty,location}=req.body;
+    const {name,email,password}=req.body;
 
     try {
         let reqData=await Usermodel.find({email});
